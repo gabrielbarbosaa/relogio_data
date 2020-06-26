@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Relógio</title>
+</head>
+<body>
+    <div class="relogio">
+        <div class="hora">
+            <div class="hr" id="hr"></div>
+        </div>
+        <div class="minuto">
+            <div class="min" id="min"></div>
+        </div>
+        <div class="segundo">
+            <div class="sec" id="sec"></div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        const deg = 6;
+        const hr = document.querySelector('#hr');
+        const min = document.querySelector('#min');
+        const sec = document.querySelector('#sec');
+
+        setInterval(() => {
+
+            let dia = new Date();
+            let hh = dia.getHours() * 30;
+            let mm = dia.getMinutes() * deg;
+            let ss = dia.getSeconds() * deg;
+
+            hr.style.transform = `rotateZ(${(hh)+(mm/12)}deg)`;
+
+            min.style.transform = `rotateZ(${mm}deg)`;
+            sec.style.transform = `rotateZ(${ss}deg)`;
+
+        });
+
+        let nomdeDia = new Array ("Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado");
+        let mesNome = new Array ("Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro");
+
+        let now = new Date;
+
+            document.write (
+            "<div class='dia'> <h1 class='dia-atual'> Hoje é " 
+                + nomdeDia[now.getDay()]
+                    + ", " 
+                + now.getDate () 
+                    + " de " 
+                + mesNome [now.getMonth()] 
+                    + " de " 
+                + now.getFullYear () 
+                    + ". </h1> </div>");
+    </script>
+</body>
+</html>
