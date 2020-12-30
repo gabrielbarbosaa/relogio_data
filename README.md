@@ -2,4 +2,4 @@
 Exemplo de data atual e relógio feito com JavaScript e CSS.
 
 ## link:
-https://gabrielbarbosaazevedo.github.io/relogio_data/
+https://gabrielbarbosaa.github.io/relogio_data/
